@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  sound_player:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./wav:/app/wav  # Папка wav на хосте будет смонтирована в контейнер
+    command: ["node", "app.js"]
